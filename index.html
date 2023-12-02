@@ -7,14 +7,20 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<audio autoplay loop muted>
-  <source src="carie.mp3" type="audio/mp3" />
-</audio>
-
 
 <body class="font-sans bg-black text-white">
-  <!-- Add this within the body tag -->
 
+  <!-- Christmas-themed Audio Player -->
+  <div class="fixed top-4 right-4">
+    <audio id="backgroundAudio" loop>
+      <source src="carie.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+
+    <button onclick="toggleAudio()" id="audioButton" class="flex items-center bg-white-500 text-white p-2 rounded-full focus:outline-none">
+      <img id="audioIcon" src="gambar/unmute.png" alt="Unmute Icon" class="h-8 w-8"> <!-- Adjust the height and width as needed -->
+    </button>
+  </div>
 
   <!-- Snowfall Container -->
   <div id="snowfall"></div>
@@ -35,45 +41,9 @@
       </div>
       <!-- Add your slideshow gallery content here -->
       <div class="slideshow-container">
-
-        <div class="slideshow-item">
-          <img src="gambar/tama1.jpeg" alt="Photo 1">
-        </div>
-   
-        <div class="slideshow-item">
-          <img src="gambar/tama2.jpeg" alt="Photo 2">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama4.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama5.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama7.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama8.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama9.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama10.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama11.jpeg" alt="Photo 3">
-        </div>
-        <div class="slideshow-item">
-          <img src="gambar/tama12.jpeg" alt="Photo 3">
-        </div>
-   
-        <div class="slideshow-item">
-          <img src="gambar/tama3.jpeg" alt="Photo 3">
-        </div>
+        <!-- ... (your existing slideshow items) ... -->
       </div>
     </div>
-
   </section>
 
   <!-- Section 3: Claim Present Button -->
@@ -84,9 +54,23 @@
     </div>
   </section>
 
-  
-  
-
+  <!-- Add scripts at the end -->
   <script src="scripts.js"></script>
+  <script>
+    function toggleAudio() {
+      var audio = document.getElementById("backgroundAudio");
+      var audioIcon = document.getElementById("audioIcon");
+
+      if (audio.paused) {
+        audio.play().catch(function (error) {
+          console.error("Autoplay was prevented:", error);
+        });
+        audioIcon.src = "gambar/mute.png";
+      } else {
+        audio.pause();
+        audioIcon.src = "gambar/unmute.png";
+      }
+    }
+  </script>
 </body>
 </html>
