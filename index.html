@@ -7,6 +7,10 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+<audio autoplay loop>
+  <source src="carie.mp3" type="audio/mp3" />
+</audio>
+
 <body class="font-sans bg-black text-white">
   <!-- Add this within the body tag -->
 
@@ -78,29 +82,7 @@
       <a class="bg-red-500 text-white px-4 py-2 rounded inline-block" href="gambar/reward.jpeg">Claim Now</a>
     </div>
   </section>
-  <audio id="backgroundAudio" loop>
-    <source src="song.mp3" type="audio/mp3">
-    Your browser does not support the audio tag.
-  </audio>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var audio = document.getElementById("backgroundAudio");
-  
-      function playAudio() {
-        audio.play().catch(function (error) {
-          console.error("Autoplay was prevented:", error);
-        });
-      }
-  
-      // Trigger playAudio on user interaction (e.g., click)
-      document.addEventListener("click", playAudio);
-  
-      // Or you can automatically trigger playAudio after a short delay
-      setTimeout(playAudio, 1000); // Adjust the delay as needed
-    });
-  </script>
-  
+
   
   
 
